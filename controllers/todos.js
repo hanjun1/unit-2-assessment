@@ -24,16 +24,6 @@ function create(req, res) {
 }
 
 function deleteTodo(req, res) {
-  let idx;
-  for (let i = 0; i < Todo.arr.length; i++) {
-    console.log(Todo.arr[i]);
-    console.log(req.body.todo);
-    if (JSON.stringify(Todo.arr[i]) === req.body.todo) {
-      console.log("hello");
-      idx = i;
-      break;
-    }
-  }
-  Todo.arr.splice(idx, 1);
+  Todo.arr.splice(req.body.todo, 1);
   res.redirect("/");
 }

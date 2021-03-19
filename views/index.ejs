@@ -10,11 +10,11 @@
     <h3>There are no To Dos yet!</h3>
     <% } else { %>
     <ul>
-      <% for (let todo of todos) { %>
-      <% let status = todo.done ? "Done" : "Not Done"; %> 
-        <li><%= todo.todo %> - <%= status %> 
+      <% for (let i=0; i<todos.length; i++) { %>
+      <% let status = todos[i].done ? "Done" : "Not Done"; %> 
+        <li><%= todos[i].todo %> - <%= status %> 
           <form action="/?_method=DELETE" method="POST">
-            <input type="hidden" name="todo" value="<%= JSON.stringify(todo) %>">
+            <input type="hidden" name="todo" value="<%= i %>">
             <button>DELETE</button>
           </form>
         </li> 
