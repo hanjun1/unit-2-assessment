@@ -1,7 +1,7 @@
 module.exports = {
   index,
   create,
-  delete: deleteTodo,
+  // delete: deleteTodo,
 };
 
 let Todo = require("../data/todos");
@@ -23,16 +23,19 @@ function create(req, res) {
   });
 }
 
-function deleteTodo(req, res) {
-  let idx;
-  for (let i = 0; i < Todo.arr.length; i++) {
-    if (Todo.arr[i] === req.body.todo) {
-      idx = i;
-      break;
-    }
-  }
-  Todo.arr.splice(idx, 1);
-  res.render("index", {
-    todos: Todo.arr,
-  });
-}
+// function deleteTodo(req, res) {
+//   let idx;
+//   for (let i = 0; i < Todo.arr.length; i++) {
+//     console.log(Todo.arr[i]);
+//     console.log(req.body.todo);
+//     if (JSON.stringify(Todo.arr[i]) === JSON.stringify(req.body.todo)) {
+//       console.log("hello");
+//       idx = i;
+//       break;
+//     }
+//   }
+//   Todo.arr.splice(idx, 1);
+//   res.redirect("/", {
+//     todos: Todo.arr,
+//   });
+// }
