@@ -13,10 +13,10 @@
       <% for (let todo of todos) { %>
       <% let status = todo.done ? "Done" : "Not Done"; %> 
         <li><%= todo.todo %> - <%= status %> 
-          <!-- <form action="/?_method=DELETE" method="POST">
-            <input type="hidden" name="todo" value="">
+          <form action="/?_method=DELETE" method="POST">
+            <input type="hidden" name="todo" value="<%= JSON.stringify(todo) %>">
             <button>DELETE</button>
-          </form> -->
+          </form>
         </li> 
       <% } %> 
     </ul>
